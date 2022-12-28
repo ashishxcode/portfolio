@@ -11,7 +11,7 @@ const MentorMarqueeNormal = () => {
 	);
 	return (
 		<>
-			{[...Array(10)].map((_, i) => (
+			{[...Array(20)].map((_, i) => (
 				<Mentor key={i} />
 			))}
 		</>

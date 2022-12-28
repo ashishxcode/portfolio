@@ -11,8 +11,8 @@ const FAQCard: React.FC<FAQCardProps> = ({ faq }) => {
 	const [isOpen, setIsOpen] = useState(false);
 	const toggle = () => setIsOpen(!isOpen);
 	return (
-		<div className={`faq-card ${isOpen && 'active'}`}>
-			<div className="faq-card-header" onClick={toggle}>
+		<div className={`faq-card ${isOpen && 'active'}`} onClick={toggle}>
+			<div className="faq-card-header">
 				<h3 className="faq-title">{faq.question}</h3>
 				<img
 					src={Arrow}

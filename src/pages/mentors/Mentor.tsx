@@ -37,7 +37,9 @@ const Mentor = () => {
 	];
 	return (
 		<section id="mentor">
-			<Marquee gradient={false} speed={100} className="mentor-ribbon-normal">
+			<div className="effect-left"></div>
+			<div className="effect-right"></div>
+			<Marquee gradient={false} className="mentor-ribbon-normal">
 				<MentorMarqueeNormal />
 			</Marquee>
 			<div className="mentor-wrapper">
@@ -49,7 +51,7 @@ const Mentor = () => {
 					})}
 				</div>
 			</div>
-			<Marquee gradient={false} speed={100} className="mentor-ribbon-filled">
+			<Marquee gradient={false} className="mentor-ribbon-filled">
 				<MentorMarqueeFilled />
 			</Marquee>
 		</section>

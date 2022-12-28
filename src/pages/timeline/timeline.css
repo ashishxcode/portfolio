@@ -2,6 +2,12 @@
 	margin-bottom: 2rem;
 }
 
+#timeline ol {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
 #timeline .timeline-container {
 	position: relative;
 }
@@ -40,13 +46,13 @@
 	position: relative;
 	display: flex;
 	gap: 1rem;
-	padding-bottom: 3rem;
+	padding-bottom: 4rem;
 }
 #timeline .cx-stepper__item:first-child {
-	padding-top: 3rem;
+	padding-top: 4rem;
 }
 #timeline .cx-stepper__item:last-child {
-	padding-bottom: 3rem;
+	padding-bottom: 4rem;
 }
 #timeline .cx-stepper__item::before {
 	content: url('../../assets/icons/stepper.svg');
@@ -70,6 +76,11 @@
 #timeline .cx-stepper__title {
 	font-weight: bold;
 	line-height: 1;
+	margin-bottom: 1rem;
+}
+
+#timeline .cx-stepper__heading .sticker {
+	font-size: 1.8rem;
 	margin-bottom: 1rem;
 }
 
