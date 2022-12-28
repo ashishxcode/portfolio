@@ -1,0 +1,180 @@
+@import url('./reset.css');
+@import url('./fonts.css');
+
+:root {
+	font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	line-height: 24px;
+	font-weight: 400;
+	color-scheme: light dark;
+	color: rgba(255, 255, 255, 0.87);
+	background-color: rgb(18, 14, 20);
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-text-size-adjust: 100%;
+
+	--font-reslindale: 'Roslindale Text';
+	--font-absolute: 'The Absolute';
+	--font-monument: 'Monument Extended';
+
+	--color-primary: #c475f4;
+	--color-white: #fff;
+	--color-black: #000;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--font-monument);
+	letter-spacing: 0.08em;
+}
+
+section {
+	width: 100%;
+	font-family: var(--font-reslindale);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	min-height: 60vh;
+	height: 100%;
+	margin-bottom: 4rem;
+}
+
+h1 {
+	font-size: 3rem;
+	line-height: 1;
+}
+
+h2 {
+	font-size: 2rem;
+}
+
+h3 {
+	font-size: 1.5rem;
+}
+
+h4 {
+	font-size: 1.25rem;
+}
+
+h5 {
+	font-size: 1rem;
+}
+
+h6 {
+	font-size: 0.75rem;
+}
+
+p {
+	font-size: 1rem;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.container {
+	max-width: 1200px;
+	width: 100%;
+	padding: 0 1rem;
+}
+
+.container-sm {
+	max-width: 800px;
+}
+
+.container-lg {
+	max-width: 1600px;
+}
+
+.container-full {
+	max-width: 100%;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-uppercase {
+	text-transform: uppercase;
+}
+
+.text-lowercase {
+	text-transform: lowercase;
+}
+
+.text-capitalize {
+	text-transform: capitalize;
+}
+
+.text-primary {
+	color: var(--color-primary);
+}
+
+.sticker {
+	font-family: var(--font-absolute);
+	font-size: 4rem;
+}
+
+.sticker-stroke {
+	text-shadow: -4px -4px 8px rgba(0, 0, 0, 0.5),
+		-3px -3px 8px rgba(0, 0, 0, 0.5), -2px -2px 8px rgba(0, 0, 0, 0.5),
+		-1px -1px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* FOR MOBILE */
+@media (max-width: 768px) {
+	h1 {
+		font-size: 2rem;
+	}
+
+	h2 {
+		font-size: 1.5rem;
+	}
+
+	h3 {
+		font-size: 1.25rem;
+	}
+
+	h4 {
+		font-size: 1rem;
+	}
+
+	h5 {
+		font-size: 0.75rem;
+	}
+
+	h6 {
+		font-size: 0.5rem;
+	}
+
+	p {
+		font-size: 0.75rem;
+	}
+
+	.sticker {
+		font-size: 2rem;
+	}
+
+	section {
+		padding: 1rem;
+	}
+}
