@@ -1,10 +1,10 @@
 import React, { useRef } from 'react';
+import { Link } from 'react-router-dom';
 import CreatorXSmallLogo from '../../../assets/creatorx-small.svg';
 import './navbar.css';
 const Navbar = () => {
 	const hamburger = useRef<HTMLDivElement>(null);
 
-	// open navbar on mobile when hamburger is clicked
 	const openNavbar = () => {
 		const navLinks = document.querySelector('.nav-links');
 		const lines = document.querySelectorAll('.line');
@@ -18,17 +18,27 @@ const Navbar = () => {
 		<header id="navbar">
 			<nav className="desktop-navbar">
 				<div className="navbar-container">
-					<p className="nav-link">contact</p>
-					<p className="nav-link">about</p>
-					<img
-						alt="unicorn logo"
-						src="https://via.placeholder.com/150"
-						width="50px"
-						height="50px"
-						className="nav-logo nav-link"
-					/>
-					<p className="nav-link">mentors</p>
-					<p className="nav-link">join</p>
+					<Link to="" className="nav-link">
+						contact
+					</Link>
+					<Link to="/" className="nav-link">
+						about
+					</Link>
+					<Link to="/" className="nav-link">
+						<img
+							alt="unicorn logo"
+							src="https://via.placeholder.com/150"
+							width="50px"
+							height="50px"
+							className="nav-logo"
+						/>
+					</Link>
+					<Link to="/" className="nav-link">
+						mentors
+					</Link>
+					<Link to="/" className="nav-link">
+						join
+					</Link>
 				</div>
 			</nav>
 			<nav className="mobile-navbar">
@@ -49,10 +59,18 @@ const Navbar = () => {
 				</div>
 
 				<div className="nav-links">
-					<p className="nav-link">join</p>
-					<p className="nav-link">mentors</p>
-					<p className="nav-link">about</p>
-					<p className="nav-link">contact</p>
+					<Link to="/" className="nav-link">
+						join
+					</Link>
+					<Link to="/" className="nav-link">
+						mentors
+					</Link>
+					<Link to="/" className="nav-link">
+						about
+					</Link>
+					<Link to="/" className="nav-link">
+						contact
+					</Link>
 				</div>
 			</nav>
 		</header>
