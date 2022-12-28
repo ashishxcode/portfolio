@@ -3,12 +3,26 @@ import Marquee from 'react-fast-marquee';
 import './feature.css';
 const Features = () => {
 	const row = [
-		'top class mentor',
-		'guranteed growth',
-		'7 day bootcamp',
-		'24/7 support',
-		'exclusive community',
-		'free certificate',
+		'10-day Bootcamp',
+		'Top-class Mentors',
+		'Guaranteed Growth',
+		'Improved Reach',
+		'Exclusive Creator',
+		'Skill Development',
+		'Creator Centric',
+		'10X Growth',
+		'Community Building',
+		'Networking',
+		'Knowledge Sharing',
+		'Getaway Location',
+		'Interactive Sessions',
+		'Time-bound webinars',
+		'More Opportunities',
+		'Creator’s Retreat',
+		'Collab Openings',
+		'Boosted Development',
+		'Professional Guidance',
+		'Fun Activities',
 	];
 	return (
 		<section id="feature">
@@ -17,10 +31,10 @@ const Features = () => {
 				<h1 className="text-uppercase">unicorn ? </h1>
 			</header>
 			<div className="feature-wrapper">
-				<Marquee gradientColor={[196, 117, 244]} speed={50}>
+				<Marquee gradientColor={[18, 14, 20]} speed={50}>
 					<div className="feature-row row-one">
 						{row.map((item, index) => (
-							<div className="feature-item" key={index}>
+							<div className="feature-item sticker-stroke" key={index}>
 								{item}
 							</div>
 						))}
@@ -28,10 +42,10 @@ const Features = () => {
 				</Marquee>
 			</div>
 			<div className="feature-wrapper feature-wrapper-wide">
-				<Marquee gradientColor={[18, 14, 20]} speed={50}>
+				<Marquee gradientColor={[18, 14, 20]} speed={50} direction="right">
 					<div className="feature-row row-two">
 						{row.map((item, index) => (
-							<div className="feature-item" key={index}>
+							<div className="feature-item sticker-stroke" key={index}>
 								{item}
 							</div>
 						))}
@@ -43,7 +57,7 @@ const Features = () => {
 				<Marquee gradientColor={[18, 14, 20]} speed={50}>
 					<div className="feature-row row-three">
 						{row.map((item, index) => (
-							<div className="feature-item" key={index}>
+							<div className="feature-item sticker-stroke" key={index}>
 								{item}
 							</div>
 						))}
