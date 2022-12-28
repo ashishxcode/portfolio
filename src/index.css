@@ -8,7 +8,6 @@
 	font-weight: 400;
 	color-scheme: light dark;
 	color: rgba(255, 255, 255, 0.87);
-	background-color: rgb(18, 14, 20);
 	font-synthesis: none;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
@@ -22,6 +21,29 @@
 	--color-primary: #c475f4;
 	--color-white: #fff;
 	--color-black: #000;
+}
+
+html,
+body {
+	height: 100%;
+	background-color: rgb(18, 14, 20);
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+	width: 0.5rem;
+}
+
+body::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+
+	border-radius: 2rem;
+	background-color: var(--color-primary);
+	outline: 1px solid rgb(18, 14, 20);
 }
 
 h1,
@@ -80,7 +102,8 @@ a {
 }
 
 a:hover {
-	text-decoration: underline;
+	color: initial;
+	text-decoration: none;
 }
 
 .container {
