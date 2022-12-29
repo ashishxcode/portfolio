@@ -12,7 +12,7 @@ const Options = () => {
 					Our team would reach you out soon
 				</p>
 			</div>
-			<div className="option-container">
+			<div className="container option-container">
 				<div className="option-card">
 					<div className="image-wrapper">
 						<img
@@ -25,8 +25,8 @@ const Options = () => {
 						<div className="design-advisory-parent">
 							<h3>Physical Camp</h3>
 							<p>
-								The only Experience one might wanna take as an individual to
-								grow!
+								Action-packed days on a getaway location among mega creators for
+								community-building and networking like never before!
 							</p>
 						</div>
 						<div>
@@ -46,8 +46,8 @@ const Options = () => {
 						<div className="design-advisory-parent">
 							<h3>Physical Camp</h3>
 							<p>
-								The only Experience one might wanna take as an individual to
-								grow!
+								A 10-week itinerary for a knowledge presented by the best in the
+								game to help you grow yourself and your business.
 							</p>
 						</div>
 						<div>
