@@ -4,47 +4,52 @@ import TimelineStep from './components/TimelineStep';
 import './timeline.css';
 
 const Timeline = () => {
-	const timelineSteps = [
+	const experience = [
 		{
-			week: 'Week 1',
-			title: 'Creative block day',
+			companyName: 'CultureX',
+			role: 'Full Stack Developer',
+			period: '2022 - Present',
 			description:
-				'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus, doloremque ut, eius cum in repellat temporibus rem quod officia eligendi dolores necessitatibus at aperiam accusantium provident consequuntur eaque quaerat fuga.',
+				'Working on the CultureX platform as a full stack developer. I am responsible for the development of the frontend and backend of the platform. I am also responsible for leading the frontend team.',
+			experience: [
+				'Developed and maintained various web applications using React, NextJS, NodeJS, ExpressJS, and MySQL.',
+				'Collaborated with a cross-functional team of designers, developers, and product managers to deliver high-quality products.',
+				'Improved the performance of the platform by 30% by optimizing the codebase.',
+				'Improved the user experience of the platform by 20% by implementing new features.',
+			],
 		},
 		{
-			week: 'Week 2',
-			title: 'How manage your time',
+			companyName: 'CultureX',
+			role: 'Associate Intern',
+			period: 'Feb/22 - Apr/22',
 			description:
-				'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus, doloremque ut, eius cum in repellat temporibus rem quod officia eligendi dolores necessitatibus at aperiam accusantium provident consequuntur eaque quaerat fuga.',
+				'While working as an intern, I was responsible for the development of the frontend of the platform. I also worked on the development of the backend of the platform.',
+			experience: [
+				'Developed several tools for internal teams to improve their productivity.',
+			],
 		},
 		{
-			week: 'Week 3',
-			title: 'Creative block day',
+			companyName: '',
+			role: 'Freelancer',
+			period: 'Jan/21 - Feb/22',
 			description:
-				'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus, doloremque ut, eius cum in repellat temporibus rem quod officia eligendi dolores necessitatibus at aperiam accusantium provident consequuntur eaque quaerat fuga.',
-		},
-		{
-			week: 'Week 4',
-			title: 'Creative block day',
-			description:
-				'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus, doloremque ut, eius cum in repellat temporibus rem quod officia eligendi dolores necessitatibus at aperiam accusantium provident consequuntur eaque quaerat fuga.',
-		},
-		{
-			week: 'Week 5',
-			title: 'Creative block day',
-			description:
-				'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus, doloremque ut, eius cum in repellat temporibus rem quod officia eligendi dolores necessitatibus at aperiam accusantium provident consequuntur eaque quaerat fuga.',
+				'Worked as a freelancer for multiple clients. I have worked on multiple projects which include web development and UI/UX design.',
+			experience: [],
 		},
 	];
 
 	return (
 		<section id="timeline">
-			<h1 className="heading">TIMELINE</h1>
+			<h1 className="heading">Experience</h1>
+			<p className="subheading">
+				Experience is the best teacher. Here are some of the things I have
+				learned so far.
+			</p>
 			<div className="timeline-container container-sm">
 				<div className="cx-stepper-blur-top"></div>
 				<div className="cx-stepper">
 					<ol>
-						{timelineSteps.map((step, index) => {
+						{experience.map((step, index) => {
 							return <TimelineStep key={index} week={step} />;
 						})}
 					</ol>
