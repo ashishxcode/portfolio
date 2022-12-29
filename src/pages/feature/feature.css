@@ -4,8 +4,7 @@
 }
 
 #feature .heading .sticker {
-	left: -36px;
-	bottom: -36px;
+	top: -1rem;
 	position: absolute;
 	transform: rotate(-15deg);
 }
@@ -43,4 +42,14 @@
 	padding: 1rem 2rem;
 	background: rgba(255, 255, 255, 0.1);
 	border-radius: 22px;
+}
+
+@media screen and (max-width: 768px) {
+	#feature .heading .sticker {
+		top: 0;
+	}
+
+	#feature .feature-wrapper:nth-child(2) {
+		display: none;
+	}
 }
