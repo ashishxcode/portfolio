@@ -11,16 +11,20 @@ const App = () => {
 	return (
 		<main>
 			<Routes>
-				<Route path="/" element={<>
-					<Hero />
-					<Features />
-					<Timeline />
-					<Options />
-					<Mentor />
-					<FAQ />
-					<Footer />
-				</>
-				} />
+				<Route
+					path="/"
+					element={
+						<>
+							<Hero />
+							<Timeline />
+							<Features />
+							<Options />
+							{/* <Mentor /> */}
+							{/* <FAQ /> */}
+							<Footer />
+						</>
+					}
+				/>
 			</Routes>
 		</main>
 	);
