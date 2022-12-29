@@ -47,9 +47,21 @@
 #hero .heading {
 	font-size: 2.8rem;
 	line-height: 1.2;
-	margin-bottom: 4rem;
+	margin-bottom: 1rem;
 }
 
+#hero .subheading {
+	font-size: 2rem;
+	margin-bottom: 1rem;
+	font-family: var(--font-absolute);
+}
+
+#hero .cta-container {
+	position: absolute;
+	bottom: 10%;
+	left: 0;
+	width: 100%;
+}
 #hero .button-cta {
 	padding: 0;
 	background: none;
@@ -65,7 +77,20 @@
 	height: 30px;
 	top: 42%;
 	left: 43%;
-	transition: 0.3s;
+	transition: 0.5s ease-in-out;
+	animation: scroll-down 2s ease-in-out infinite;
+}
+
+@keyframes scroll-down {
+	0% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(10px);
+	}
+	100% {
+		transform: translateY(0);
+	}
 }
 
 #hero .textcircle {
@@ -77,10 +102,6 @@
 
 #hero .button-cta:hover .textcircle {
 	animation: rotate 10s linear infinite reverse;
-}
-
-#hero .button-cta:hover .arrow {
-	rotate: 180deg;
 }
 
 @keyframes rotate {
