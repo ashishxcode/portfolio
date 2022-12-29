@@ -1,6 +1,7 @@
 #hero {
 	padding: 1rem;
 	position: relative;
+	min-height: 100vh;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -35,62 +36,71 @@
 }
 
 #hero .hero-content {
-	height: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
 	text-align: center;
-	padding: 4rem 0;
-
 	color: #ffffff;
-	background-color: transparent;
 }
 
 #hero .heading {
-	font-size: 65px;
-	line-height: 0.9;
+	font-size: 2.8rem;
+	line-height: 1.2;
+	margin-bottom: 4rem;
 }
 
-/*
-.heading .sticker {
+#hero .button-cta {
+	padding: 0;
+	background: none;
+	-webkit-clip-path: circle(40% at 50% 50%);
+	clip-path: circle(40% at 50% 50%);
+	position: relative;
+}
+
+#hero .arrow {
 	position: absolute;
-	left: 0;
-	bottom: -80px;
-	width: 100%;
-	margin: 0 auto;
-} */
-
-#hero .hero-content .powered-by {
-	font-family: var(--font-monument);
-	letter-spacing: 0.08em;
-	margin-bottom: 1rem;
-	opacity: 0.4;
+	fill: rgb(255, 248, 248);
+	width: 30px;
+	height: 30px;
+	top: 42%;
+	left: 43%;
+	transition: 0.3s;
 }
 
-#hero .cta {
-	background: rgba(255, 255, 255, 0.01);
-	border: 2px solid #ffffff;
-	border-radius: 0.8rem;
-	padding: 1.5rem 5rem;
-	text-transform: uppercase;
-	font-family: var(--font-monument);
-	letter-spacing: 0.05rem;
-	line-height: 1;
+#hero .textcircle {
+	position: relative;
+	display: block;
+	width: 200px;
+	animation: rotate 10s linear infinite;
+}
+
+#hero .button-cta:hover .textcircle {
+	animation: rotate 10s linear infinite reverse;
+}
+
+#hero .button-cta:hover .arrow {
+	rotate: 180deg;
+}
+
+@keyframes rotate {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+#hero .textcircle text {
 	font-size: 2rem;
-	cursor: pointer;
-	transition: all 0.3s ease;
-	margin: 2rem 0;
+	font-family: var(--font-monument);
+	text-transform: uppercase;
+	fill: var(--color-primary);
 }
 
-#hero .cta:hover {
-	box-shadow: -1rem 1rem rgba(18, 14, 20), -1rem 1rem 0 2px #fff;
-	background: rgba(255, 255, 255, 0.1);
-}
-
-#hero .powered-by .sticker {
-	opacity: 0.5;
-	font-size: 1.5rem;
+#hero .textcircle textPath {
+	letter-spacing: 17px; /* Firefox needs this */
 }
 
 @media (max-width: 768px) {

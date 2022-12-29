@@ -1,8 +1,5 @@
 import React from 'react';
 import './hero.css';
-import CreatorXLogo from '../../assets/creatorx.png';
-
-import LunchGIF from '../../assets/launch.gif';
 import Navbar from './components/Navbar';
 
 const Hero = () => {
@@ -11,26 +8,44 @@ const Hero = () => {
 			<div className="effect-left" />
 			<div className="effect-right" />
 			<Navbar />
-			<div className="hero-content">
-				<img alt="" src={LunchGIF} />
-
+			<div className="hero-content container-sm">
 				<h1 className="text-center heading">
-					THINK BIG. <br />
-					CREATE WHAT'S <span className="text-primary">NEXT</span>
+					Bringing your ideas to <br />
+					life through <span className="text-primary">&lt;code/&gt; </span>
 				</h1>
-				<div className="cta" role="button">
-					APPLY
-				</div>
-				<div>
-					<p className="powered-by">powered by</p>
-					<img
-						className="creatorx-logo"
-						alt=""
-						src={CreatorXLogo}
-						width="auto"
-						height="50px"
-					/>
-				</div>
+				<button className="button-cta">
+					<svg className="textcircle" viewBox="0 0 500 500">
+						<title>Projects & client work 2020</title>
+						<defs>
+							<path
+								id="textcircle"
+								d="M250,400 a150,150 0 0,1 0,-300a150,150 0 0,1 0,300Z"
+							/>
+						</defs>
+						<text>
+							<textPath
+								xlinkHref="#textcircle"
+								aria-label="Ashish Patel, Full Stack Developer"
+								textLength="1000"
+							>
+								● Ashish Patel ● Full Stack Developer
+							</textPath>
+						</text>
+					</svg>
+					<svg
+						className="arrow"
+						width="30"
+						height="31"
+						viewBox="0 0 30 31"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<path
+							d="M25.4921 11.2128L20.2461 16.5356L15 0L9.75393 16.5356L4.50786 11.2128L-1.97242e-09 15.7857L15 31L30 15.7857L25.4921 11.2128Z"
+							fill-opacity="1"
+						/>
+					</svg>
+				</button>
 			</div>
 		</section>
 	);
