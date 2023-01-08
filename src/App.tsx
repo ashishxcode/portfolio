@@ -16,9 +16,9 @@ const App = () => {
 					element={
 						<>
 							<Hero />
-							<Timeline />
 							<Features />
 							<Options />
+							<Timeline />
 							{/* <Mentor /> */}
 							<Blogs />
 							<Footer />
