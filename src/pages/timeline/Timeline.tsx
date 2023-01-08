@@ -40,11 +40,12 @@ const Timeline = () => {
 
 	return (
 		<section id="timeline">
-			<h1 className="heading">Experience</h1>
-			<p className="subheading">
-				Experience is the best teacher. Here are some of the things I have
-				learned so far.
-			</p>
+			<div className="heading">
+				<h1>Experience</h1>
+				<p className="sticker text-primary text-center sticker-stroke">
+					I currently work for
+				</p>
+			</div>
 			<div className="timeline-container container-sm">
 				<div className="cx-stepper-blur-top"></div>
 				<div className="cx-stepper">

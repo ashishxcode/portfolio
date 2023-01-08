@@ -97,6 +97,11 @@
 		padding: 1rem;
 	}
 
+	#blogs .blogs-card:hover {
+		background: rgba(255, 255, 255, 0.1);
+		grid-template-columns: 1fr;
+	}
+
 	#blogs .blogs-title {
 		font-size: 1rem;
 	}
