@@ -1,5 +1,5 @@
 import Footer from './pages/footer/Footer';
-import FAQ from './pages/faq/FAQ';
+import Blogs from './pages/blogs/Blogs';
 import Features from './pages/feature/Feature';
 import Hero from './pages/hero/Hero';
 import Mentor from './pages/mentors/Mentor';
@@ -20,7 +20,7 @@ const App = () => {
 							<Features />
 							<Options />
 							{/* <Mentor /> */}
-							{/* <FAQ /> */}
+							<Blogs />
 							<Footer />
 						</>
 					}
