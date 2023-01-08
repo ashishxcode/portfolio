@@ -3,7 +3,7 @@ import FAQ from './pages/faq/FAQ';
 import Features from './pages/feature/Feature';
 import Hero from './pages/hero/Hero';
 import Mentor from './pages/mentors/Mentor';
-import Options from './pages/option/Option';
+import Options from './pages/projects/Projects';
 import Timeline from './pages/timeline/Timeline';
 import { Routes, Route } from 'react-router-dom';
 
