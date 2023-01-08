@@ -26,11 +26,24 @@ const Footer = () => {
 							<img src={InstagramIcon} alt="" />
 						</a>
 					</div>
-					<h5 className="username">@ashishxcode</h5>
-
-					<p>Linkedin | Instagram</p>
+					<div>
+						<h5 className="username">@ashishxcode</h5>
+						<small>Linkedin | Instagram</small>
+					</div>
 				</div>
-				<h4>EAT | SLEEP | CODE | REPEAT</h4>
+				<h4 className="footer-text">EAT | SLEEP | CODE | REPEAT</h4>
+
+				<small>
+					Thank you 🙏{' '}
+					<a
+						href="https://www.vandangohil.com/"
+						target="_blank"
+						rel="noreferrer"
+					>
+						Vandan Gohil
+					</a>{' '}
+					for the design inspiration
+				</small>
 			</div>
 		</div>
 	);

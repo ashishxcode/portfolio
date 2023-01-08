@@ -30,10 +30,9 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	flex-direction: column;
-	padding: 30px 50px;
-	width: 290px;
-	height: 250px;
+	gap: 2rem;
+	width: 460px;
+	height: 160px;
 	background: rgba(255, 255, 255, 0.1);
 	border-radius: 20px;
 	margin: 0 auto 2rem auto;
@@ -44,16 +43,29 @@
 	justify-content: center;
 	align-items: center;
 	gap: 1rem;
-	margin-bottom: 1.5rem;
+}
+
+#footer .icon-wrapper img {
+	transition: all 0.4s ease-in-out;
+}
+
+#footer .icon-wrapper img:hover {
+	transform: scale(1.1);
+	/* back drop shadow */
+	filter: drop-shadow(0 0 1rem rgba(195, 117, 244, 0.5));
 }
 
 #footer .username {
-	margin-bottom: 0.8rem;
+	margin: 0;
 }
 
 #footer .container-sm {
 	margin: 0 auto;
 	text-align: center;
+}
+
+#footer .footer-text {
+	margin-bottom: 2rem;
 }
 
 @media (max-width: 768px) {
