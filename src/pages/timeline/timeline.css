@@ -61,7 +61,7 @@
 	padding-top: 6rem;
 }
 #timeline .cx-stepper__item:last-child {
-	padding-bottom: 6srem;
+	padding-bottom: 6rem;
 }
 #timeline .cx-stepper__item::before {
 	content: url('../../assets/icons/stepper.svg');

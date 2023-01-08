@@ -54,8 +54,4 @@
 	#feature .heading .sticker {
 		top: 0;
 	}
-
-	#feature .feature-wrapper:nth-child(2) {
-		display: none;
-	}
 }
