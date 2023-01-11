@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
-import CreatorXSmallLogo from '../../../assets/creatorx-small.svg';
+import Logo from '../../../assets/logo.svg';
 import './navbar.css';
 const Navbar = () => {
 	const hamburger = useRef<HTMLDivElement>(null);
@@ -24,10 +24,10 @@ const Navbar = () => {
 					<Link to="/" className="nav-link">
 						about
 					</Link>
-					<Link to="/" className="nav-link">
+					<Link to="/">
 						<img
 							alt="unicorn logo"
-							src="https://via.placeholder.com/150"
+							src={Logo}
 							width="50px"
 							height="50px"
 							className="nav-logo"
