@@ -29,6 +29,7 @@ body {
 	background-color: rgb(18, 14, 20);
 	overflow-y: auto;
 	overflow-x: hidden;
+	scroll-behavior: smooth;
 }
 
 body::-webkit-scrollbar {

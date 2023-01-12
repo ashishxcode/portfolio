@@ -18,13 +18,13 @@ const Navbar = () => {
 		<header id="navbar">
 			<nav className="desktop-navbar">
 				<div className="navbar-container">
-					<Link to="" className="nav-link">
-						contact
-					</Link>
-					<Link to="/" className="nav-link">
+					<a href="#about" className="nav-link">
 						about
-					</Link>
-					<Link to="/">
+					</a>
+					<a href="#work" className="nav-link">
+						work
+					</a>
+					<a href="/">
 						<img
 							alt="unicorn logo"
 							src={Logo}
@@ -32,13 +32,13 @@ const Navbar = () => {
 							height="50px"
 							className="nav-logo"
 						/>
-					</Link>
-					<Link to="/" className="nav-link">
-						mentors
-					</Link>
-					<Link to="/" className="nav-link">
-						join
-					</Link>
+					</a>
+					<a href="#blogs" className="nav-link">
+						blogs
+					</a>
+					<a href="#" className="nav-link">
+						contact
+					</a>
 				</div>
 			</nav>
 			<nav className="mobile-navbar">
