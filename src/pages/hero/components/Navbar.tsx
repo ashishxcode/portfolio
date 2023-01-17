@@ -12,6 +12,13 @@ const Navbar = () => {
 		lines.forEach((line) => {
 			line.classList.toggle('active');
 		});
+
+		navLinks?.addEventListener('click', () => {
+			navLinks.classList.remove('active');
+			lines.forEach((line) => {
+				line.classList.remove('active');
+			});
+		});
 	};
 
 	return (
@@ -36,7 +43,7 @@ const Navbar = () => {
 					<a href="#blogs" className="nav-link">
 						blogs
 					</a>
-					<a href="#" className="nav-link">
+					<a href="#contact" className="nav-link">
 						contact
 					</a>
 				</div>
@@ -45,7 +52,7 @@ const Navbar = () => {
 				<div className="navbar-container">
 					<img
 						alt="unicorn logo"
-						src="https://via.placeholder.com/150"
+						src={Logo}
 						width="50px"
 						height="50px"
 						className="nav-logo nav-link"
@@ -59,18 +66,18 @@ const Navbar = () => {
 				</div>
 
 				<div className="nav-links">
-					<Link to="/" className="nav-link">
-						join
-					</Link>
-					<Link to="/" className="nav-link">
-						mentors
-					</Link>
-					<Link to="/" className="nav-link">
+					<a href="#about" className="nav-link">
 						about
-					</Link>
-					<Link to="/" className="nav-link">
+					</a>
+					<a href="#work" className="nav-link">
+						work
+					</a>
+					<a href="#blogs" className="nav-link">
+						blogs
+					</a>
+					<a href="#contact" className="nav-link">
 						contact
-					</Link>
+					</a>
 				</div>
 			</nav>
 		</header>
