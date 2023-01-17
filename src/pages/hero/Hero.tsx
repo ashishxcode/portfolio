@@ -11,8 +11,8 @@ const Hero = () => {
 			<div className="hero-content container-sm">
 				<div className="heading-container">
 					<h1 className="text-center heading">
-						Bringing your ideas to <br />
-						life through <span className="text-primary">&lt;code/&gt; </span>
+						Designing with <span className="text-primary">precision,</span>
+						developing with <span className="text-primary">passion</span>
 					</h1>
 				</div>
 				<div className="cta-container">
