@@ -46,7 +46,7 @@
 
 #hero .heading {
 	font-size: 2.6rem;
-	line-height: 1.2;
+	line-height: 1;
 	margin-bottom: 1rem;
 }
 
@@ -68,15 +68,16 @@
 	-webkit-clip-path: circle(40% at 50% 50%);
 	clip-path: circle(40% at 50% 50%);
 	position: relative;
+	cursor: pointer;
 }
 
 #hero .arrow {
 	position: absolute;
 	fill: rgb(255, 248, 248);
-	width: 30px;
-	height: 30px;
-	top: 42%;
-	left: 43%;
+	width: 40px;
+	height: 40px;
+	top: 35%;
+	left: 40%;
 	transition: 0.5s ease-in-out;
 	animation: scroll-down 2s ease-in-out infinite;
 }
@@ -98,10 +99,6 @@
 	display: block;
 	width: 200px;
 	animation: rotate 10s linear infinite;
-}
-
-#hero .button-cta:hover .textcircle {
-	animation: rotate 10s linear infinite reverse;
 }
 
 @keyframes rotate {

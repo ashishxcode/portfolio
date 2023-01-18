@@ -12,10 +12,12 @@ const Hero = () => {
 				<div className="heading-container">
 					<h1 className="text-center heading">
 						Designing with <span className="text-primary">precision,</span>
-						developing with <span className="text-primary">passion</span>
+					</h1>
+					<h1 className="text-center heading">
+						Developing with <span className="text-primary">passion</span>
 					</h1>
 				</div>
-				<div className="cta-container">
+				<a className="cta-container" href="#about" title="about">
 					<button className="button-cta">
 						<svg className="textcircle" viewBox="0 0 500 500">
 							<title>Projects & client work 2020</title>
@@ -37,19 +39,21 @@ const Hero = () => {
 						</svg>
 						<svg
 							className="arrow"
-							width="30"
-							height="31"
-							viewBox="0 0 30 31"
+							width="25"
+							height="33"
+							viewBox="0 0 25 33"
 							fill="none"
 							xmlns="http://www.w3.org/2000/svg"
 						>
 							<path
-								d="M25.4921 11.2128L20.2461 16.5356L15 0L9.75393 16.5356L4.50786 11.2128L-1.97242e-09 15.7857L15 31L30 15.7857L25.4921 11.2128Z"
-								fill-opacity="1"
+								fill-rule="evenodd"
+								clip-rule="evenodd"
+								d="M13.2553 1.98496L13.2553 25.2754C13.8772 24.1473 14.6089 23.1465 15.4709 22.2635C17.4986 20.1864 20.1658 18.8448 23.5917 17.9674L24.0879 19.9049C20.8947 20.7227 18.5976 21.9237 16.902 23.6606C15.224 25.3795 14.0553 27.7049 13.2553 30.9274V32.4972L11.2553 32.4972V30.9211C10.4554 27.7019 9.28702 25.3784 7.61015 23.6606C5.91459 21.9237 3.61745 20.7227 0.424252 19.9049L0.920429 17.9674C4.34637 18.8448 7.01359 20.1864 9.04129 22.2635C9.90256 23.1458 10.6337 24.1457 11.2553 25.2726L11.2553 1.98496C11.2553 1.43268 11.703 0.984962 12.2553 0.984962C12.8076 0.984962 13.2553 1.43268 13.2553 1.98496Z"
+								fill="white"
 							/>
 						</svg>
 					</button>
-				</div>
+				</a>
 			</div>
 		</section>
 	);
