@@ -5,6 +5,7 @@ import Hero from './pages/hero/Hero';
 import About from './pages/about/About';
 import Options from './pages/projects/Projects';
 import Timeline from './pages/timeline/Timeline';
+import Contact from './pages/contact/Contact';
 import { Routes, Route } from 'react-router-dom';
 
 const App = () => {
@@ -20,8 +21,8 @@ const App = () => {
 							<Features />
 							<Options />
 							<Timeline />
-
 							<Blogs />
+							<Contact />
 							<Footer />
 						</>
 					}
