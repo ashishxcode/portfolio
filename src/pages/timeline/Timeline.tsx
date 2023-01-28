@@ -7,7 +7,7 @@ const Timeline = () => {
 	const experience = [
 		{
 			companyName: 'CultureX',
-			role: 'Full Stack Developer',
+			role: 'Full Stack SDE',
 			period: '2022 - Present',
 			description:
 				'Working on the CultureX platform as a full stack developer. I am responsible for the development of the frontend and backend of the platform. I am also responsible for leading the frontend team.',
@@ -20,7 +20,7 @@ const Timeline = () => {
 		},
 		{
 			companyName: 'CultureX',
-			role: 'Associate Intern',
+			role: 'Associate',
 			period: 'Feb/22 - Apr/22',
 			description:
 				'While working as an intern, I was responsible for the development of the frontend of the platform. I also worked on the development of the backend of the platform.',

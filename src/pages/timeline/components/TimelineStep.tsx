@@ -15,16 +15,19 @@ const TimelineStep: React.FC<TimelineStepProps> = ({ week }) => {
 		<li className="cx-stepper__item">
 			<div className="cx-stepper__content">
 				<div className="cx-stepper__heading">
-					<p className="sticker sticker-stroke cx-stepper__title">
-						{week.companyName}
-					</p>
-					<h2 className="cx-stepper__week">{week.period}</h2>
+					<p className="sticker sticker-stroke cx-stepper__title"></p>
+					<h2 className="cx-stepper__title">
+						{week.role}{' '}
+						{week.companyName && (
+							<span className=" text-primary">{`@${week.companyName}`}</span>
+						)}
+					</h2>
 				</div>
-				<h3 className="cx-stepper__subtitle text-primary">{week.role}</h3>
+				<h3 className="cx-stepper__week">{week.period}</h3>
 				<p className="cx-stepper__desc">{week.description}</p>
 				{week.experience.length > 0 && (
 					<div className="cx-stepper__list-container">
-						<h6>Highlights</h6>
+						<h5>Highlights</h5>
 						<ul className="cx-stepper__list">
 							{week.experience.map((exp, index) => {
 								return (
