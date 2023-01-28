@@ -45,27 +45,14 @@
 	gap: 1rem;
 }
 
-#footer .icon-wrapper img {
-	transition: all 0.4s ease-in-out;
-}
-
-#footer .icon-wrapper img:hover {
-	transform: scale(1.1);
-	/* back drop shadow */
-	filter: drop-shadow(0 0 1rem rgba(195, 117, 244, 0.5));
-}
-
-#footer .username {
-	margin: 0;
-}
-
 #footer .container-sm {
 	margin: 0 auto;
 	text-align: center;
 }
 
 #footer .footer-text {
-	margin-bottom: 2rem;
+	text-align: center;
+	margin-bottom: 1rem;
 }
 
 @media (max-width: 768px) {

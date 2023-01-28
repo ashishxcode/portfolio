@@ -9,30 +9,13 @@ const Footer = () => {
 		<div id="footer">
 			<div className="container-sm">
 				<div className="social-icon-wrapper">
-					<div className="icon-wrapper">
-						<a
-							href="https://linkedin.com/ashishxcode"
-							target="_blank"
-							rel="noreferrer"
-						>
-							<img src={LinkedinIcon} alt="" />
-						</a>
-
-						<a
-							href="https://instagram.com/ashishxcode"
-							target="_blank"
-							rel="noreferrer"
-						>
-							<img src={InstagramIcon} alt="" />
-						</a>
-					</div>
-					<div>
-						<h5 className="username">@ashishxcode</h5>
-						<small>Linkedin | Instagram</small>
-					</div>
+					<h4>EAT | SLEEP | CODE | REPEAT</h4>
 				</div>
-				<h4 className="footer-text">EAT | SLEEP | CODE | REPEAT</h4>
 			</div>
+
+			<p className="footer-text">
+				© {new Date().getFullYear()}&nbsp; Ashish Patel | All Rights Reserved
+			</p>
 		</div>
 	);
 };
