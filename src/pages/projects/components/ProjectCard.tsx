@@ -1,26 +1,42 @@
 import React from 'react';
 import VirtualCampImage from '../../../assets/virtual-camp.png';
 
-const ProjectCard = () => {
+interface ProjectProps {
+	project: {
+		thumbnail: string;
+		title: string;
+		description: string;
+		techStack: string[];
+		liveLink: string;
+	};
+	key: number;
+}
+const ProjectCard: React.FC<ProjectProps> = ({
+	project: { thumbnail, title, description, techStack, liveLink },
+	key,
+}) => {
 	return (
-		<div className="projects-card">
+		<div className="projects-card" key={key}>
 			<div className="image-wrapper">
-				<img className="card-image" alt="virtual camp" src={VirtualCampImage} />
+				<img className="card-image" alt="virtual camp" src={thumbnail} />
 			</div>
 			<div className="content">
 				<div className="content-header">
-					<small className="sub-title">
-						JAVASCRIPT + REACT + NODEJS + MONGODB
-					</small>
-					<h3 className="title">UnicornX</h3>
+					<small className="sub-title">{techStack.join('+ ')}</small>
+					<h3 className="title">{title}</h3>
 				</div>
 				<div className="content-wrapper">
-					<p>
-						UnicornX is a offering a platform for creators from CreatorX to
-						educate and engage with their audience through live and on-demand
-						video streaming.
-					</p>
-					<button className="btn-text">View Live</button>
+					<p>{description}</p>
+					{liveLink && (
+						<a
+							className="btn-text"
+							href={liveLink}
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							Live Demo
+						</a>
+					)}
 				</div>
 			</div>
 		</div>

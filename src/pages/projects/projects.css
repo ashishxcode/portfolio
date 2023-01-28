@@ -1,17 +1,17 @@
-#projects .heading {
+#work .heading {
 	text-align: center;
 	margin-bottom: 6rem;
 	position: relative;
 }
 
-#projects .sticker {
+#work .sticker {
 	position: absolute;
 	top: 1rem;
 	text-align: center;
 	width: 100%;
 }
 
-#projects .projects-container {
+#work .projects-container {
 	width: 100%;
 	height: 100%;
 	display: grid;
@@ -24,7 +24,7 @@
 	margin-bottom: 3rem;
 }
 
-#projects .projects-card {
+#work .projects-card {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -38,17 +38,17 @@
 	overflow: hidden;
 }
 
-#projects .projects-card * {
+#work .projects-card * {
 	transition: all 0.3s ease-out;
 }
 
-#projects .image-wrapper {
+#work .image-wrapper {
 	overflow: hidden;
 	border-radius: 1rem;
 	margin-bottom: 1rem;
 }
 
-#projects .image-wrapper img {
+#work .image-wrapper img {
 	width: 100%;
 	height: 100%;
 	border-radius: 1rem;
@@ -56,52 +56,57 @@
 	transform: scale(1.2);
 }
 
-#projects .sub-title {
+#work .sub-title {
 	display: block;
 	margin-bottom: 0.5rem;
 }
 
-#projects .content-wrapper {
+#work .content-wrapper {
 	overflow: hidden;
 	visibility: hidden;
 	height: 0;
 }
 
-#projects .btn-text {
-	margin: 1rem 0;
+#work .btn-text {
+	display: block;
+	margin: 0.5rem 0;
+	font-family: var(--font-monument);
 	color: var(--color-primary);
 	background-color: transparent;
 	outline: none;
 	border: none;
 	cursor: pointer;
 }
-#projects .projects-card:hover {
+#work .projects-card:hover {
 	border-color: var(--color-white);
 }
-#projects .projects-card:hover .title {
+#work .projects-card:hover .title {
 	margin-bottom: 1rem;
 	color: var(--color-primary);
 	text-shadow: 0px 10px 40px rgba(165, 76, 255, 0.9);
 }
-#projects .projects-card:hover .content-wrapper {
+#work .projects-card:hover .content-wrapper {
 	visibility: visible;
 	height: 150px;
 }
-
-#projects .projects-card:hover .image-wrapper img {
+#work .projects-card:hover .image-wrapper {
+	border-radius: 1.5rem;
+}
+#work .projects-card:hover .image-wrapper img {
 	transform: scale(1);
+	border-radius: 1.5rem;
 }
 
 @media screen and (max-width: 800px) {
-	#projects .sticker {
+	#work .sticker {
 		font-size: 2rem;
 		top: 2.2rem;
 	}
 
-	#projects .projects-card {
+	#work .projects-card {
 		flex-direction: column;
 	}
-	#projects .projects-container {
+	#work .projects-container {
 		grid-template-columns: 1fr;
 		padding: 1rem;
 	}
@@ -109,32 +114,32 @@
 
 /* mobile screen */
 @media screen and (max-width: 480px) {
-	#projects .projects-container {
+	#work .projects-container {
 		grid-template-columns: 1fr;
 		padding: 0;
 	}
 
-	#projects .sticker {
+	#work .sticker {
 		font-size: 1.5rem;
 		top: 2.8rem;
 	}
 
-	#projects .projects-card {
+	#work .projects-card {
 		width: 100%;
 		margin: 0 auto;
 	}
 
-	#projects .image-wrapper {
+	#work .image-wrapper {
 		height: 220px;
 	}
 
-	#projects .projects-btn {
+	#work .projects-btn {
 		width: 100%;
 		margin: 0 auto;
 	}
 
 	/* rmeove all hover effect */
-	#projects .projects-card:hover {
+	#work .projects-card:hover {
 		width: 100%;
 		background-color: transparent;
 		border-color: var(--color-white);
@@ -142,23 +147,27 @@
 		box-shadow: none;
 	}
 
-	#projects .projects-card:hover .projects-btn {
+	#work .projects-card:hover .projects-btn {
 		width: 100%;
 		background-color: var(--color-white);
 		color: var(--color-black);
 	}
 
-	#projects .projects-card:hover .image-wrapper {
+	#work .projects-card:hover .image-wrapper {
 		width: 100%;
 		border-color: var(--color-white);
 	}
 
-	#projects .image-wrapper img {
+	#work .image-wrapper img {
 		width: 100%;
 		height: 100%;
 	}
 
-	#projects .projects-btn {
+	#work .projects-btn {
 		width: 100%;
+	}
+	#work .projects-card:hover .content-wrapper {
+		visibility: visible;
+		height: auto;
 	}
 }

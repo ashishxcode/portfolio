@@ -4,7 +4,7 @@
 }
 
 #feature .heading .sticker {
-	top: -1rem;
+	top: 0rem;
 	position: absolute;
 	transform: rotate(-15deg);
 }
