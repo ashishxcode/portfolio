@@ -1,21 +1,18 @@
-import React, { useState } from 'react';
-import FAQCard from './components/BlogsCard';
+import React from 'react';
+import BlogCard from './components/BlogsCard';
+import BlogCover from '../../assets/thumb/blog-cover.webp';
 
 import './blogs.css';
 const FAQ = () => {
-	const [showMore, setShowMore] = useState(false);
-
-	const faqData = [
+	const blogList = [
 		{
-			thumbnail: 'https://picsum.photos/200/300',
-			title: 'What is Lorem Ipsum?',
-			description:
-				'Lorem ipsum dolor sit amet consectetur adipisicin elit. Quisquam quod, voluptate, quia, voluptates quas voluptatibus aspernatur quae quidem voluptatum quos. Quisquam, quae. Quisquam',
-			link: 'https://google.com',
+			thumbnail: `${BlogCover}`,
+			title: 'Mastering the Art of Writing Effective GitHub Commit Messages',
+			description: `There are no strict rules for writing commit messages but When working on a project on GitHub, it's important to communicate clearly and concisely about the changes you've madel...`,
+			link: 'https://dev.to/ashishxcode/mastering-the-art-of-writing-effective-github-commit-messages-5d2p',
 		},
 	];
 
-	const toggle = () => setShowMore(!showMore);
 	return (
 		<section className="container" id="blogs">
 			<header className="heading  text-center">
@@ -28,18 +25,22 @@ const FAQ = () => {
 			<div className="blogs-wrapper">
 				{
 					// slice the array to show only 5 items
-					faqData.slice(0, showMore ? faqData.length : 5).map((item, index) => (
-						<FAQCard key={index} blogs={item} />
+					blogList.map((item, index) => (
+						<a href={item.link} target="_blank" rel="noreferrer" key={index}>
+							<BlogCard key={index} blogs={item} />
+						</a>
 					))
 				}
 
-				{faqData.length > 5 && (
-					<div
-						className="text-primary text-center view-more "
-						onClick={toggle}
-						role="button"
-					>
-						{showMore ? 'View Less' : 'View More'}
+				{blogList.length >= 1 && (
+					<div className="text-primary text-center view-more " role="button">
+						<a
+							href="https://dev.to/ashishxcode"
+							target="_blank"
+							rel="noreferrer"
+						>
+							Read More on Dev.to
+						</a>
 					</div>
 				)}
 			</div>

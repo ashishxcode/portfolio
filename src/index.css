@@ -100,9 +100,25 @@ p {
 
 a {
 	text-decoration: none;
+	transition: all 0.2s ease-in-out;
 }
 
 a:hover {
+	color: initial;
+	text-decoration: none;
+}
+
+a:active {
+	color: initial;
+	text-decoration: none;
+}
+
+a:visited {
+	color: initial;
+	text-decoration: none;
+}
+
+a:focus {
 	color: initial;
 	text-decoration: none;
 }
