@@ -1,7 +1,16 @@
+import Header from "@/components/header";
+import Separator from "@/components/separator";
 import React from "react";
 
 const Home = () => {
-  return <div>Home</div>;
+  return (
+    <main className="overflow-x-hidden w-full max-w-8xl h-screen flex flex-col items-center p-4 md:py-24">
+      <section className="space-y-4 md:space-y-24">
+        <Header />
+        <Separator />
+      </section>
+    </main>
+  );
 };
 
 export default Home;
