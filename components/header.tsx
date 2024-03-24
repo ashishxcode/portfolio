@@ -12,7 +12,6 @@ const Header = () => {
       />
       <div className="space-y-2 ">
         <h1 className="text-3xl font-semibold">Ashish Patel</h1>
-        <h2 className="text-3xl font-semibold text-blue-300">Web Developer</h2>
         <p className="text-lg font-light">
           I&apos;m a full stack developer at Culturex. I specialize in UI/UX
           design, Responsive design, and web development.
