@@ -51,7 +51,7 @@ const SkillsCategory = ({ category }: { category: SkillCategory }) => (
 
 const Skills = () => (
   <section className="space-y-4">
-    <h2 className="text-3xl font-semibold">Skills</h2>
+    <h1 className="h1 mb-5 md:mb-10">Skills</h1>
     <div className="space-y-5 md:space-y-10">
       <div className="grid grid-cols-1 gap-8 md:gap-4 md:grid-cols-3 md:divide-x divide-blue-500/50 dark:divide-blue-500/20">
         {SKILLS_LIST.map((category) => (

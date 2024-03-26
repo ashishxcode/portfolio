@@ -3,7 +3,7 @@ import React from "react";
 const About = () => {
   return (
     <section className="space-y-4">
-      <h2 className="text-3xl font-semibold">About Me</h2>
+      <h1 className="h1 mb-5 md:mb-10">About Me</h1>
       <p className="text-lg">
         I&apos;m Ashish, a Full Stack Developer from Ahmedabad, India.I love
         making practical digital solutions. While I focus on ensuring
