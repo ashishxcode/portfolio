@@ -89,8 +89,8 @@ const Project = ({
 const Projects = () => {
   return (
     <section className="space-y-4">
-      <h1 className="h1 mb-5 md:mb-10">My Projects</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <h1 className="h1 mb-5 md:mb-10">Projects</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
         {projects.map((project, index) => (
           <Project key={index} {...project} />
         ))}

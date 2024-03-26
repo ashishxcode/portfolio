@@ -23,10 +23,10 @@ const Navbar = () => {
   return (
     <nav
       className={`${
-        isSticky ? "sticky top-0 bg-background shadow-md" : "relative"
+        isSticky ? "sticky top-0  z-50 backdrop-blur" : "relative"
       }`}
     >
-      <div className="w-full max-w-6xl mx-auto flex items-center justify-between p-4 ">
+      <div className="w-full max-w-4xl mx-auto flex items-center justify-between p-4 ">
         <div className="text-2xl font-bold flex items-center">
           &lt;
           <div

@@ -39,7 +39,7 @@ const SkillItem = ({ skill }: { skill: string }) => (
 );
 
 const SkillsCategory = ({ category }: { category: SkillCategory }) => (
-  <div key={category.id} className="md:first:ps-0 md:last:pe-0 md:px-8">
+  <div key={category.id}>
     <h3 className="text-lg mb-2">{category.name}</h3>
     <div className="flex flex-wrap gap-4">
       {category.skills.map((skill) => (
@@ -53,7 +53,7 @@ const Skills = () => (
   <section className="space-y-4">
     <h1 className="h1 mb-5 md:mb-10">Skills</h1>
     <div className="space-y-5 md:space-y-10">
-      <div className="grid grid-cols-1 gap-8 md:gap-4 md:grid-cols-3 md:divide-x divide-blue-500/50 dark:divide-blue-500/20">
+      <div className="flex flex-col gap-8">
         {SKILLS_LIST.map((category) => (
           <SkillsCategory key={category.id} category={category} />
         ))}
