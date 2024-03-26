@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import ModeToggle from "@/components/mode-toggle";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 const Navbar = () => {
   const [isSticky, setIsSticky] = useState(false);
@@ -21,7 +22,7 @@ const Navbar = () => {
   }, []);
 
   const NAV_LINKS = [
-    { name: "Blog", href: "/blog" },
+    { name: "Blogs", href: "/blogs" },
     { name: "Snippets", href: "/snippets" },
   ];
 
@@ -32,7 +33,7 @@ const Navbar = () => {
       }`}
     >
       <div className="w-full max-w-4xl mx-auto flex items-center justify-between p-4 ">
-        <div className="text-2xl font-bold flex items-center">
+        <Link href="/" className="text-2xl font-bold flex items-center">
           &lt;
           <div
             className={cn(
@@ -43,7 +44,7 @@ const Navbar = () => {
             <span className="text-blue-500">ashishxcode</span>
           </div>
           /&gt;
-        </div>
+        </Link>
         <div className="flex items-center gap-4">
           <ul className="hidden md:flex items-center space-x-4">
             {NAV_LINKS.map((link) => (
@@ -51,7 +52,7 @@ const Navbar = () => {
                 key={link.name}
                 className="transition-all duration-300 ease-in-out hover:text-blue-500"
               >
-                <a href={link.href}>{link.name}</a>
+                <Link href={link.href}>{link.name}</Link>
               </li>
             ))}
           </ul>
