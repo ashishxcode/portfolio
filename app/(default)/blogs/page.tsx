@@ -13,6 +13,7 @@ interface Article {
   description: string;
   cover_image: string;
   reading_time_minutes: number;
+  created_at: string;
   tag_list: string[];
 }
 
@@ -22,19 +23,24 @@ const Article = ({ article }: { article: Article }) => (
       href={article.url}
       className="block min-h-[300px] space-y-4 hover:bg-blue-500/10 border border-blue-500/20 p-4 rounded-md transition-a duration-300"
     >
-      <div className="relative">
-        <div className="absolute bottom-2 right-2 px-2 py-1 text-xs font-medium bg-black rounded text-white">
-          {article.reading_time_minutes} min read
-        </div>
-        <Image
-          src={article.cover_image}
-          alt={article.title}
-          width={1000}
-          height={500}
-          className="w-full h-48 object-cover rounded-md ratio-16/9"
-        />
-      </div>
+      <Image
+        src={article.cover_image}
+        alt={article.title}
+        width={1000}
+        height={500}
+        className="w-full h-48 object-cover rounded-md ratio-16/9"
+      />
 
+      <div className="flex  text-sm opacity-80 gap-2 items-center justify-between">
+        <span>
+          {new Date(article.created_at).toLocaleDateString("en-US", {
+            month: "short",
+            day: "numeric",
+            year: "numeric",
+          })}
+        </span>
+        <span>{article.reading_time_minutes} min read</span>
+      </div>
       <div className="space-y-4">
         <h3 className="font-bold text-lg">{article.title}</h3>
         <p className="text-sm line-clamp-2">{article.description}</p>
