@@ -4,6 +4,7 @@ import Header from "@/components/header";
 import Separator from "@/components/separator";
 import Skills from "@/components/skills";
 import Projects from "@/components/projects";
+import Experience from "@/components/experience";
 
 const NavItems = [
   {
@@ -14,7 +15,7 @@ const NavItems = [
 ];
 const Home = () => {
   return (
-    <main className="w-full max-w-6xl mx-auto h-screen flex flex-col items-center p-4 md:py-24">
+    <main className="w-full max-w-4xl mx-auto flex flex-col items-center p-4 md:py-24">
       <section className="space-y-12 md:space-y-20 pb-12 md:pb-24">
         <Header />
         <Separator />
@@ -22,6 +23,7 @@ const Home = () => {
         <Separator />
         <Skills />
         <Projects />
+        <Experience />
       </section>
     </main>
   );
