@@ -20,6 +20,11 @@ const Navbar = () => {
     };
   }, []);
 
+  const NAV_LINKS = [
+    { name: "Blog", href: "/blog" },
+    { name: "Snippets", href: "/snippets" },
+  ];
+
   return (
     <nav
       className={`${
@@ -31,15 +36,27 @@ const Navbar = () => {
           &lt;
           <div
             className={cn(
-              "transition-all duration-300 ease-in-out overflow-hidden font-mono",
-              isSticky ? "w-0 opacity-0" : "w-[160px] opacity-100"
+              "transition-all duration-500 linear overflow-hidden font-mono",
+              isSticky ? "w-0" : "w-[160px]"
             )}
           >
             <span className="text-blue-500">ashishxcode</span>
           </div>
           /&gt;
         </div>
-        <ModeToggle />
+        <div className="flex items-center gap-4">
+          <ul className="hidden md:flex items-center space-x-4">
+            {NAV_LINKS.map((link) => (
+              <li
+                key={link.name}
+                className="transition-all duration-300 ease-in-out hover:text-blue-500"
+              >
+                <a href={link.href}>{link.name}</a>
+              </li>
+            ))}
+          </ul>
+          <ModeToggle />
+        </div>
       </div>
     </nav>
   );
