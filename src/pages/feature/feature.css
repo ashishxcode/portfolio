@@ -1,0 +1,57 @@
+#feature .heading {
+	position: relative;
+	margin-bottom: 3rem;
+}
+
+#feature .heading .sticker {
+	top: 0rem;
+	position: absolute;
+	transform: rotate(-15deg);
+}
+
+#feature .feature-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	max-width: 800px;
+}
+#feature .feature-wrapper-wide {
+	max-width: 900px;
+}
+#feature .feature-wrapper .feature-row {
+	display: flex;
+	justify-content: space-between;
+	align-items: stretch;
+	justify-content: center;
+	gap: 1rem;
+	margin-right: 1rem;
+	margin-bottom: 1rem;
+}
+
+#feature .feature-wrapper .feature-row .feature-item {
+	width: 180px;
+	height: 130px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	font-size: 1.8rem;
+	font-family: var(--font-absolute);
+	padding: 2rem 2rem;
+	background: rgba(255, 255, 255, 0.15);
+	border-radius: 22px;
+}
+
+#feature .feature-wrapper .feature-row .feature-item .skill-icon {
+	width: 80px;
+	height: 80px;
+	object-fit: contain;
+}
+
+@media screen and (max-width: 768px) {
+	#feature .heading .sticker {
+		top: 0;
+	}
+}
