@@ -1,57 +1,50 @@
-// pages/index.js
-import { LoopIcon } from "@radix-ui/react-icons";
 import Image from "next/image";
+import InfluenzerImage from "@/public/images/projects/influenzer.png";
+import AppleImage from "@/public/images/projects/apple.png";
+import MetaverseImage from "@/public/images/projects/metaverse.png";
+import CultureXImage from "@/public/images/projects/culturex.png";
+import Link from "next/link";
 
 interface ProjectProps {
   title: string;
   description: string;
-  icon: JSX.Element;
+  image: any;
   url: string;
   technologies: string[];
 }
 
 const projects = [
   {
-    title: "Project 1",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    icon: <LoopIcon />,
-    url: "https://example.com/project1",
-    technologies: ["React", "Next.js"],
+    title: "Influenzer",
+    image: InfluenzerImage,
+    description:
+      "Craft a dynamic and engaging platform showcasing the power of influencer marketing in a sleek and modern interface.",
+    technologies: ["Next.js", "TailwindCSS", "AOS"],
+    url: "https://www.influenzer.ai/",
   },
   {
-    title: "Project 2",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    icon: <LoopIcon />,
-    url: "https://example.com/project2",
-    technologies: ["React", "Next.js"],
+    title: "iPhone 14 Landing Page",
+    image: AppleImage,
+    description:
+      "Implement innovative design elements and captivating visuals to highlight the features of the iPhone 14 in an immersive web experience.",
+    technologies: ["React", "Three.js", "GSAP"],
+    url: "https://appledesign.vercel.app/",
   },
   {
-    title: "Project 3",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    icon: <LoopIcon />,
-    url: "https://example.com/project3",
-    technologies: ["React", "Next.js"],
+    title: "Metaverse Landing Page",
+    image: MetaverseImage,
+    description:
+      "Create an immersive environment that blurs the lines between reality and virtual reality, featuring captivating artwork and seamless navigation.",
+    technologies: ["Next.js", "TailwindCSS", "Framer Motion"],
+    url: "https://themetaversemadness.vercel.app/",
   },
   {
-    title: "Project 4",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    icon: <LoopIcon />,
-    url: "https://example.com/project4",
-    technologies: ["React", "Next.js"],
-  },
-  {
-    title: "Project 5",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    icon: <LoopIcon />,
-    url: "https://example.com/project5",
-    technologies: ["React", "Next.js"],
-  },
-  {
-    title: "Project 6",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    icon: <LoopIcon />,
-    url: "https://example.com/project6",
-    technologies: ["React", "Next.js"],
+    title: "CultureX",
+    image: CultureXImage,
+    description:
+      "Curate an immersive experience that celebrates diversity and cultural exchange, inviting users to explore and engage with different traditions and perspectives.",
+    technologies: ["Next.js", "TailwindCSS", "Framer Motion"],
+    url: "https://culturex.ai/",
   },
 ];
 
@@ -59,16 +52,17 @@ const projects = [
 const Project = ({
   title,
   description,
-  icon,
+  image,
   url,
   technologies,
 }: ProjectProps) => {
   return (
-    <div className="rounded-lg overflow-hidden border border-blue-500/20 hover:shadow-lg cursor-pointer transition-all duration-300 hover:bg-blue-500/10">
+    <Link
+      href={url}
+      className="rounded-lg overflow-hidden border border-blue-500/20 cursor-pointer transition-all duration-300 hover:bg-blue-500/10"
+    >
       <div className="space-y-6 p-6">
-        <span className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-white">
-          {icon}
-        </span>
+        <Image src={image} alt={title} className="w-16 h-16" />
         <h2 className="text-xl font-semibold">{title}</h2>
         <p className="opacity-80">{description}</p>
         <div className="flex flex-wrap gap-2 mt-4">
@@ -82,7 +76,7 @@ const Project = ({
           ))}
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
