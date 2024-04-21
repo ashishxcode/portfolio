@@ -21,10 +21,7 @@ const Navbar = () => {
     };
   }, []);
 
-  const NAV_LINKS = [
-    { name: "Blogs", href: "/blogs" },
-    { name: "Snippets", href: "/snippets" },
-  ];
+  const NAV_LINKS = [{ name: "Blogs", href: "/blogs" }];
 
   return (
     <nav
@@ -41,16 +38,16 @@ const Navbar = () => {
               isSticky ? "w-0" : "w-[160px]"
             )}
           >
-            <span className="text-blue-500">ashishxcode</span>
+            <span className="text-primary">ashishxcode</span>
           </div>
           /&gt;
         </Link>
-        <div className="flex items-center gap-4">
-          <ul className="hidden md:flex items-center space-x-4">
+        <div className="flex items-center gap-4 bg-background px-4 py-[4px] border rounded-full">
+          <ul className="hidden md:flex items-center space-x-4 ">
             {NAV_LINKS.map((link) => (
               <li
                 key={link.name}
-                className="transition-all duration-300 ease-in-out hover:text-blue-500"
+                className="transition-all duration-300 ease-in-out hover:text-primary"
               >
                 <Link href={link.href}>{link.name}</Link>
               </li>

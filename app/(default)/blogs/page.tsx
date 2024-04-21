@@ -21,7 +21,7 @@ const Article = ({ article }: { article: Article }) => (
   <article key={article.id} className="w-full h-full">
     <Link
       href={article.url}
-      className="block min-h-[300px] space-y-4 hover:bg-blue-500/10 border border-blue-500/20 p-4 rounded-md transition-a duration-300"
+      className="block min-h-[300px] space-y-4 hover:bg-primary/10 border border-primary/50 p-4 rounded-md transition-a duration-300"
     >
       <Image
         src={article.cover_image}
@@ -50,7 +50,7 @@ const Article = ({ article }: { article: Article }) => (
         {article.tag_list.map((tag) => (
           <span
             key={tag}
-            className="text-xs font-medium bg-blue-500/10 rounded-sm px-2 py-1 dark:bg-blue-500/20"
+            className="text-xs font-medium bg-primary/10 rounded-sm px-2 py-1 dark:bg-primary/20"
           >
             #{tag}
           </span>
@@ -79,7 +79,7 @@ const Blogs = () => {
         {isLoading
           ? [1, 2, 3, 4, 5, 6].map((i) => (
               <div role="status" key={i} className="space-y-8 animate-pulse ">
-                <div className="flex items-center justify-center w-full h-48 bg-gray-300 rounded sm:w-96 dark:bg-gray-700 w-full h-48 object-cover rounded-md ratio-16/9">
+                <div className="flex items-center justify-center w-full h-48 bg-gray-300  sm:w-96 dark:bg-gray-700 object-cover rounded-md ratio-16/9">
                   <svg
                     className="w-10 h-10 text-gray-200 dark:text-gray-600"
                     aria-hidden="true"

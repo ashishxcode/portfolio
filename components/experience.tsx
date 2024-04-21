@@ -37,13 +37,13 @@ const Experience = () => {
       <div>
         {experiences.map((experience, index) => (
           <article key={index} className="relative pb-8 md:pb-10 last:pb-0">
-            <div className="absolute left-0 top-0 w-px h-full bg-blue-500/20"></div>
+            <div className="absolute left-2 top-0 w-px h-full bg-primary/20"></div>
 
-            <div className="absolute left-0 top-0 transform -translate-x-[45%] translate-y-1/2">
-              <div className="w-4 h-4 bg-blue-500 rounded-full"></div>
+            <div className="absolute left-0 top-0 transform -translate-x-[0 %] translate-y-1/2">
+              <div className="w-4 h-4 bg-primary rounded-full"></div>
             </div>
 
-            <div className="pl-8 space-y-4">
+            <div className="pl-6 space-y-4">
               <h3 className="h3">{`${experience.title} at ${experience.company}`}</h3>
               <div className="flex items-center gap-2 opacity-80">
                 <p>

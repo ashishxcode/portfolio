@@ -5,6 +5,7 @@ import Separator from "@/components/separator";
 import Skills from "@/components/skills";
 import Projects from "@/components/projects";
 import Experience from "@/components/experience";
+import Connect from "@/components/connect";
 
 const NavItems = [
   {
@@ -23,7 +24,10 @@ const Home = () => {
         <Separator />
         <Skills />
         <Projects />
+        <Separator />
         <Experience />
+        <Separator />
+        <Connect />
       </section>
     </main>
   );

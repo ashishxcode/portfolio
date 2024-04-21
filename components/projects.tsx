@@ -59,17 +59,19 @@ const Project = ({
   return (
     <Link
       href={url}
-      className="rounded-lg overflow-hidden border border-blue-500/20 cursor-pointer transition-all duration-300 hover:bg-blue-500/10"
+      className="rounded-lg overflow-hidden border border-primary/20 cursor-pointer transition-all duration-300 hover:bg-primary/10"
     >
       <div className="space-y-6 p-6">
         <Image src={image} alt={title} className="w-16 h-16" />
-        <h2 className="text-xl font-semibold">{title}</h2>
-        <p className="opacity-80">{description}</p>
+        <div>
+          <h2 className="text-xl font-semibold mb-4">{title}</h2>
+          <p className="opacity-80">{description}</p>
+        </div>
         <div className="flex flex-wrap gap-2 mt-4">
           {technologies.map((technology, index) => (
             <span
               key={index}
-              className="text-sm italic font-medium bg-blue-500/10 rounded-sm px-2 py-1 dark:bg-blue-500/20"
+              className="text-sm bg-primary/10 rounded-sm px-2 py-1 dark:bg-primary/20"
             >
               {technology}
             </span>
