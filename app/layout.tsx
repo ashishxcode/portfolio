@@ -1,20 +1,14 @@
 import type { Metadata } from "next";
-import { Inter, Space_Mono } from "next/font/google";
+import { Outfit } from "next/font/google";
 import "./css/globals.css";
 
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/utils/theme-provider";
 import Navbar from "@/components/navbar";
 
-const inter = Inter({
+const outfitFont = Outfit({
   subsets: ["latin"],
   variable: "--font-sans",
-});
-
-const spaceMono = Space_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
-  weight: ["400", "700"],
 });
 
 export const metadata: Metadata = {
@@ -32,8 +26,7 @@ export default function RootLayout({
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
-          inter.variable,
-          spaceMono.variable
+          outfitFont.variable
         )}
       >
         <ThemeProvider
