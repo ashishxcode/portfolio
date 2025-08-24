@@ -11,8 +11,8 @@ export function Container({
 }: ContainerProps) {
   if (asSection) {
     return (
-      <div className={`w-full border-t ${className}`}>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 py-12 sm:py-16 lg:py-20 border-x">
+      <div className={`w-full ${className}`}>
+        <div className="max-w-4xl border-t mx-auto px-4 sm:px-6 lg:px-12 py-8 sm:py-10 lg:py-12 border-x">
           {children}
         </div>
       </div>
@@ -21,7 +21,7 @@ export function Container({
 
   return (
     <div
-      className={`max-w-4xl mx-auto px-4 py-6 sm:px-6 sm:py-8 lg:px-12 lg:py-12 border-x ${className}`}
+      className={`max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-10 lg:py-12 border-x ${className}`}
     >
       {children}
     </div>

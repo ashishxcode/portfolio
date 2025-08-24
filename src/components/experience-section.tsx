@@ -1,64 +1,94 @@
 "use client";
 
-import { useState } from "react";
 import { Container } from "@/components/container";
-import { Plus, Check } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
 import { AchievementsSection } from "@/components/achievements-section";
 
 const experiences = [
   {
     company: "CultureX",
-    period: "Aug 2023 — Present",
+    period: "Feb 2022 — Present",
     role: "Senior Frontend Engineer",
     description:
-      "Leading frontend architecture and performance optimization. Scaled core systems to support 100+ enterprise clients and improved developer experience by 40%.",
+      "Joined as early engineer (employee #3) to build the product from ground up. Now leading frontend development with focus on clean, scalable solutions that serve 100+ enterprise clients.",
     current: true,
     impact: [
-      "Scaled to 100+ enterprise clients",
-      "Led architecture decisions",
-      "Improved developer experience by 40%",
+      "Early-stage team member, grew to senior role",
+      "Built core product features and scalable architecture",
+      "Created internal dashboards saving 10+ hours/week",
+      "Led clean architecture serving 100+ enterprise clients",
+      "Streamlined developer workflows and tooling",
     ],
     companyInfo: "B2B Creator Marketing Platform",
   },
-  {
-    company: "CultureX",
-    period: "Feb 2022 — Jul 2023",
-    role: "Frontend Engineer",
-    description:
-      "Joined as an early engineer and helped build the product from ground up. Built core features, reusable components, and launched internal dashboards.",
-    current: false,
-    impact: [
-      "Early-stage team member (employee #3)",
-      "Built core product features from scratch",
-      "Improved ops efficiency by 10+ hours/week",
-    ],
-    companyInfo: "Series A Startup",
-  },
 ];
 
-
 export function ExperienceSection() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: {
+      opacity: 0,
+      x: -30,
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+    },
+  };
+
   return (
     <section id="experience">
       <Container asSection>
-        <h2 className="text-sm text-muted uppercase tracking-wide mb-6">
+        <motion.h2
+          className="text-sm text-muted uppercase tracking-wide mb-6"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+          viewport={{ once: true, margin: "-100px" }}
+        >
           Experience
-        </h2>
-        <div className="space-y-4">
+        </motion.h2>
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+        >
           {experiences.map((exp, index) => (
-            <ExperienceItem
-              key={index}
-              experience={exp}
-              isLast={index === experiences.length - 1}
-            />
+            <motion.div key={index} variants={itemVariants}>
+              <ExperienceItem
+                experience={exp}
+                isLast={index === experiences.length - 1}
+              />
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Achievements Section */}
-        <div className="mt-12 pt-12 border-t">
+        <motion.div
+          className="mt-12"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.8,
+            delay: 0.3,
+            ease: [0.25, 0.46, 0.45, 0.94],
+          }}
+          viewport={{ once: true, margin: "-100px" }}
+        >
           <AchievementsSection />
-        </div>
+        </motion.div>
       </Container>
     </section>
   );
@@ -71,14 +101,13 @@ function ExperienceItem({
   experience: any;
   isLast: boolean;
 }) {
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
-    <div className={cn("border rounded-lg mb-4 overflow-hidden bg-background hover:shadow-sm transition-all duration-200")}>
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="w-full p-4 sm:p-6 text-left cursor-pointer hover:bg-accent/30 transition-colors"
-      >
+    <div
+      className={cn(
+        "border overflow-hidden bg-background hover:shadow-sm transition-all duration-200"
+      )}
+    >
+      <button className="w-full p-4 sm:p-6 text-left hover:bg-accent/30 transition-colors">
         <div className="flex items-start justify-between">
           <div className="flex items-start gap-3 sm:gap-4 flex-1">
             <div className="w-10 h-10 sm:w-12 sm:h-12 bg-accent rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
@@ -114,36 +143,9 @@ function ExperienceItem({
                   : experience.period.split(" — ")[1]}
               </span>
             </div>
-            <Plus
-              className={`w-4 h-4 sm:w-5 sm:h-5 text-muted transition-all duration-200 flex-shrink-0 ${
-                isOpen ? "rotate-45" : ""
-              }`}
-            />
           </div>
         </div>
       </button>
-
-      <div
-        className={`transition-all duration-300 ease-in-out ${
-          isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-        } overflow-hidden`}
-      >
-        <div className="px-4 sm:px-6 pb-4 sm:pb-6 pt-0 border-t border-accent/50">
-          <div className="mt-6">
-            <h4 className="text-sm uppercase tracking-wide text-muted mb-4">
-              Key Impact
-            </h4>
-            <ul className="space-y-3">
-              {experience.impact.map((item: string, itemIndex: number) => (
-                <li key={itemIndex} className="text-muted text-sm leading-relaxed flex items-start gap-2">
-                  <span className="text-muted">•</span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </div>
     </div>
   );
 }

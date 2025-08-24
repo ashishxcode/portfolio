@@ -20,14 +20,16 @@ export default function AboutPage() {
               </h1>
               <div className="space-y-6 text-muted leading-relaxed">
                 <p>
-                  I&apos;m a frontend engineer who believes great products come
-                  from understanding both the technical and human sides of
+                  I&apos;m a frontend developer who loves creating clean, minimal
+                  designs that solve real user problems. I believe great products
+                  come from understanding both the technical and human sides of
                   software development.
                 </p>
                 <p>
-                  I&apos;m constantly learning new things everyday and I love
-                  meeting people who are motivated and unafraid of sharing their
-                  ideas with the world.
+                  When I&apos;m not coding, you&apos;ll find me exploring new
+                  cafes as a coffee enthusiast, trying different cuisines as a
+                  foodie, or taking long walks to clear my mind and find
+                  inspiration.
                 </p>
               </div>
             </div>
@@ -53,19 +55,19 @@ export default function AboutPage() {
               The Journey
             </h2>
             <h1 className="text-3xl font-bold mb-8">
-              Building products at scale.
+              Building scalable web experiences.
             </h1>
             <div className="space-y-6 text-muted leading-relaxed">
               <p>
-                My journey started with a Computer Science degree, but I quickly
+                My journey started with learning web development, and I quickly
                 realized the most interesting problems were about creating
-                experiences that people actually want to use.
+                clean, minimal experiences that people actually want to use.
               </p>
               <p>
-                I love the intersection of design and code—building products
-                that are both beautiful and performant. Over the past 5+ years,
-                I&apos;ve specialized in React ecosystems and scaling frontend
-                architectures for millions of users.
+                After spending 3+ years building web applications, I now focus
+                on creating scalable solutions. I love the intersection of
+                design and code—building products that are both beautiful and
+                functional while maintaining clean architecture.
               </p>
             </div>
           </div>

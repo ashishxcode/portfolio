@@ -1,5 +1,8 @@
+"use client";
+
 import { Mail, MapPin, Github, Linkedin, ArrowUpRight, ExternalLink } from "lucide-react"
 import { Container } from "@/components/container";
+import { motion } from "framer-motion";
 
 const contacts = [
   {
@@ -26,29 +29,66 @@ const contacts = [
 ]
 
 export function ContactSection() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: 30 
+    },
+    visible: { 
+      opacity: 1, 
+      y: 0
+    }
+  };
+
   return (
     <section id="contact">
       <Container asSection>
       <div className="max-w-3xl">
-        <h2 className="text-sm text-muted uppercase tracking-wide mb-6">
+        <motion.h2 
+          className="text-sm text-muted uppercase tracking-wide mb-6"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+          viewport={{ once: true, margin: "-100px" }}
+        >
           Get In Touch
-        </h2>
-        <div className="grid sm:grid-cols-3 gap-8">
+        </motion.h2>
+        <motion.div 
+          className="grid sm:grid-cols-3 gap-8"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+        >
           {contacts.map((contact, index) => (
-            <a
+            <motion.a
               key={index}
               href={contact.href}
               {...(contact.external && { target: "_blank", rel: "noopener noreferrer" })}
               className="flex items-center gap-3 text-muted hover:text-foreground transition-colors group"
+              variants={itemVariants}
+              whileHover={{ x: 5 }}
+              transition={{ duration: 0.2 }}
             >
               <contact.icon className="w-5 h-5" />
               <span className="font-medium">{contact.label}</span>
               {contact.external && (
                 <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
               )}
-            </a>
+            </motion.a>
           ))}
-        </div>
+        </motion.div>
       </div>
       </Container>
     </section>

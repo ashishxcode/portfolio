@@ -1,5 +1,17 @@
 @import "tailwindcss";
 
+/* Prevent flash of unstyled content */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: 10 10 10;
+    --foreground: 245 245 245;
+    --muted: 163 163 163;
+    --border: 38 38 38;
+    --accent: 23 23 23;
+    --primary: 245 245 245;
+  }
+}
+
 :root {
   --background: 255 255 255;
   --foreground: 23 23 23;

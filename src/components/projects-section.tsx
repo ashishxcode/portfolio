@@ -1,22 +1,26 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Container } from "@/components/container";
 import { Plus } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { motion, useInView } from "framer-motion";
 
 export function ProjectsSection() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.2 });
+  
   const projects = [
     {
       title: "Creator Discovery Engine",
-      subtitle: "Scaling search for 420M+ creator profiles",
+      subtitle: "Clean search interface for 420M+ creator profiles",
       description:
-        "Built a comprehensive search and discovery platform enabling B2B clients to efficiently find relevant creators from a massive database.",
+        "Built an intuitive search and discovery platform with clean, minimal design that helps B2B clients efficiently find relevant creators from a massive database.",
       impact: [
-        "Enabled 100+ B2B clients",
-        "420M+ profiles indexed",
-        "<200ms search response",
-        "99.9% uptime",
+        "Serves 100+ enterprise clients",
+        "420M+ profiles indexed with clean architecture",
+        "Fast, responsive search experience",
+        "99.9% uptime reliability",
       ],
       tech: ["React", "TypeScript", "Elasticsearch", "Node.js", "Redis"],
       year: "2024",
@@ -24,62 +28,116 @@ export function ProjectsSection() {
     },
     {
       title: "Campaign Management Dashboard",
-      subtitle: "Intelligent automation platform for marketing ops",
+      subtitle: "Clean, user-friendly automation platform",
       description:
-        "Developed comprehensive dashboards that transformed manual campaign processes into automated workflows with real-time monitoring.",
+        "Designed and developed intuitive dashboards with minimal, clean interfaces that transformed complex manual campaign processes into simple automated workflows.",
       impact: [
-        "10+ hours/week saved",
-        "95% error reduction",
-        "3x faster setup",
-        "100% team adoption",
+        "Saved 10+ hours/week for operations team",
+        "95% reduction in manual errors",
+        "3x faster campaign setup process",
+        "100% team adoption rate",
       ],
       tech: ["React", "Tailwind", "React Query", "PostgreSQL", "Python"],
       year: "2023",
       liveLink: "https://culturex.com/dashboard",
     },
     {
-      title: "Performance Optimization Suite",
-      subtitle: "Modern architecture transformation",
+      title: "Scalable Architecture Migration",
+      subtitle: "Modern, clean codebase transformation",
       description:
-        "Led complete migration from legacy CRA to Vite-based architecture with component refactoring and bundle optimization.",
+        "Led complete migration from legacy architecture to modern Vite-based system with clean component refactoring, improved developer experience, and scalable patterns.",
       impact: [
-        "40% faster builds",
-        "8min → 2min build time",
-        "50% better engagement",
-        "60% dev satisfaction",
+        "40% faster development builds",
+        "Build time reduced from 8min to 2min",
+        "Improved user experience and engagement",
+        "60% increase in developer satisfaction",
       ],
-      tech: ["Vite", "React", "TypeScript", "Performance APIs", "Webpack"],
+      tech: ["Vite", "React", "TypeScript", "Clean Architecture", "Webpack"],
       year: "2023",
       liveLink: "https://culturex.com",
     },
   ];
 
+  const containerVariants = {
+    hidden: { 
+      opacity: 0 
+    },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.1,
+        duration: 0.6,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: {
+      opacity: 0,
+      y: 30,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+    },
+  };
+
   return (
-    <section id="work">
+    <section id="work" ref={ref}>
       <Container asSection>
-        <h2 className="text-sm text-muted uppercase tracking-wide mb-6">
+        <motion.h2
+          className="text-sm text-muted uppercase tracking-wide mb-6"
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
           Selected Work
-        </h2>
-        <div className="space-y-0">
+        </motion.h2>
+        <motion.div
+          className="space-y-0"
+          variants={containerVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+        >
           {projects.map((project, index) => (
-            <ProjectItem
-              key={index}
-              project={project}
-              isLast={index === projects.length - 1}
-            />
+            <motion.div key={index} variants={itemVariants}>
+              <ProjectItem
+                project={project}
+                isLast={index === projects.length - 1}
+              />
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </Container>
     </section>
   );
 }
 
-function ProjectItem({ project, isLast }: { project: any; isLast: boolean }) {
+interface Project {
+  title: string;
+  subtitle: string;
+  description: string;
+  impact: string[];
+  tech: string[];
+  year: string;
+  liveLink: string;
+}
+
+function ProjectItem({
+  project,
+  isLast,
+}: {
+  project: Project;
+  isLast: boolean;
+}) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div
+    <motion.div
       className={cn("border group hover:bg-accent", !isLast && "border-b-0")}
+      whileHover={{ scale: 1.01 }}
+      transition={{ duration: 0.2 }}
     >
       <button
         onClick={() => setIsOpen(!isOpen)}
@@ -94,34 +152,53 @@ function ProjectItem({ project, isLast }: { project: any; isLast: boolean }) {
               <h3 className="text-base sm:text-lg lg:text-xl font-semibold text-foreground mb-1 group-hover:text-muted transition-colors">
                 {project.title}
               </h3>
-              <p className="text-muted text-xs sm:text-sm">{project.subtitle}</p>
+              <p className="text-muted text-xs sm:text-sm">
+                {project.subtitle}
+              </p>
             </div>
           </div>
           <div className="ml-2 sm:ml-4 flex-shrink-0">
-            <Plus
-              className={`w-4 h-4 sm:w-5 sm:h-5 text-muted transition-transform group-hover:scale-110 ${
-                isOpen ? "rotate-45" : ""
-              }`}
-            />
+            <motion.div
+              animate={{ rotate: isOpen ? 45 : 0 }}
+              transition={{ duration: 0.2 }}
+            >
+              <Plus className="w-4 h-4 sm:w-5 sm:h-5 text-muted transition-transform group-hover:scale-110" />
+            </motion.div>
           </div>
         </div>
       </button>
 
-      <div
-        className={`overflow-hidden transition-all duration-300 ease-in-out ${
-          isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-        }`}
+      <motion.div
+        initial={{ height: 0, opacity: 0 }}
+        animate={{
+          height: isOpen ? "auto" : 0,
+          opacity: isOpen ? 1 : 0,
+        }}
+        transition={{ duration: 0.3, ease: [0.42, 0, 0.58, 1] }}
+        style={{ overflow: "hidden" }}
       >
         <div className="px-4 sm:px-6 lg:px-8 pb-4 sm:pb-6 lg:pb-8">
-          <div className="space-y-4 sm:space-y-6">
-            <p className="text-muted text-sm sm:text-base leading-relaxed">{project.description}</p>
+          <motion.div
+            className="space-y-4 sm:space-y-6"
+            initial={{ y: -20 }}
+            animate={{ y: isOpen ? 0 : -20 }}
+            transition={{ duration: 0.2, delay: isOpen ? 0.1 : 0 }}
+          >
+            <p className="text-muted text-sm sm:text-base leading-relaxed">
+              {project.description}
+            </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
               <div>
-                <h4 className="text-sm sm:text-base font-medium text-foreground mb-2 sm:mb-3">Impact</h4>
+                <h4 className="text-sm sm:text-base font-medium text-foreground mb-2 sm:mb-3">
+                  Impact
+                </h4>
                 <ul className="space-y-2">
                   {project.impact.map((item: string, itemIndex: number) => (
-                    <li key={itemIndex} className="text-muted text-xs sm:text-sm flex items-start gap-2">
+                    <li
+                      key={itemIndex}
+                      className="text-muted text-xs sm:text-sm flex items-start gap-2"
+                    >
                       <span className="text-muted">•</span>
                       {item}
                     </li>
@@ -130,7 +207,9 @@ function ProjectItem({ project, isLast }: { project: any; isLast: boolean }) {
               </div>
 
               <div>
-                <h4 className="text-sm sm:text-base font-medium text-foreground mb-2 sm:mb-3">Tech Stack</h4>
+                <h4 className="text-sm sm:text-base font-medium text-foreground mb-2 sm:mb-3">
+                  Tech Stack
+                </h4>
                 <div className="flex flex-wrap gap-1.5 sm:gap-2">
                   {project.tech.map((tech: string, techIndex: number) => (
                     <span
@@ -143,9 +222,9 @@ function ProjectItem({ project, isLast }: { project: any; isLast: boolean }) {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }
