@@ -1,5 +1,70 @@
 @import "tailwindcss";
 
-body {
-  font-family: system-ui, -apple-system, sans-serif;
+:root {
+  --background: 255 255 255;
+  --foreground: 23 23 23;
+  --muted: 115 115 115;
+  --border: 229 229 229;
+  --accent: 245 245 245;
+  --primary: 23 23 23;
 }
+
+.dark {
+  --background: 10 10 10;
+  --foreground: 245 245 245;
+  --muted: 163 163 163;
+  --border: 38 38 38;
+  --accent: 23 23 23;
+  --primary: 245 245 245;
+}
+
+* {
+  border-color: rgb(var(--border));
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace;
+  background-color: rgb(var(--background));
+  color: rgb(var(--foreground));
+}
+
+.text-muted {
+  color: rgb(var(--muted));
+}
+
+.bg-accent {
+  background-color: rgb(var(--accent));
+}
+
+.border-default {
+  border-color: rgb(var(--border));
+}
+
+.bg-primary {
+  background-color: rgb(var(--primary));
+}
+
+.text-primary {
+  color: rgb(var(--primary));
+}
+
+.text-foreground {
+  color: rgb(var(--foreground));
+}
+
+.bg-foreground {
+  background-color: rgb(var(--foreground));
+}
+
+.bg-background {
+  background-color: rgb(var(--background));
+}
+
+.text-background {
+  color: rgb(var(--background));
+}
+
