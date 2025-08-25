@@ -13,11 +13,26 @@ export function PortfolioHeader() {
 
   return (
     <motion.header
+      className="relative overflow-hidden"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
-      <Container className="py-16 sm:py-24 lg:py-32">
+      {/* Dot Background */}
+      <div className="absolute inset-0">
+        <div
+          className={cn(
+            "absolute inset-0",
+            "[background-size:20px_20px]",
+            "[background-image:radial-gradient(#cacaca_1px,transparent_1px)]",
+            "dark:[background-image:radial-gradient(#404040_1px,transparent_1px)]"
+          )}
+        />
+        {/* Radial gradient for the faded look */}
+        <div className="pointer-events-none absolute inset-0 bg-background [mask-image:radial-gradient(ellipse_at_center,transparent_5%,black_40%)]"></div>
+      </div>
+
+      <Container className="relative py-16 sm:py-24 lg:py-32">
         <div className="max-w-4xl">
           {/* Available Badge */}
           <motion.div
