@@ -94,17 +94,26 @@ export function ExperienceSection() {
   );
 }
 
+interface Experience {
+  company: string;
+  period: string;
+  role: string;
+  description: string;
+  current: boolean;
+  impact: string[];
+  companyInfo: string;
+}
+
 function ExperienceItem({
   experience,
-  isLast,
 }: {
-  experience: any;
+  experience: Experience;
   isLast: boolean;
 }) {
   return (
     <div
       className={cn(
-        "border overflow-hidden bg-background hover:shadow-sm transition-all duration-200"
+        "border overflow-hidden bg-background transition-all duration-200"
       )}
     >
       <button className="w-full p-4 sm:p-6 text-left hover:bg-accent/30 transition-colors">

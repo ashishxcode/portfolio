@@ -86,7 +86,7 @@ export default function BlogPage() {
                 rel="noopener noreferrer"
                 className="block"
               >
-                <div className="border rounded-lg sm:rounded-xl p-4 sm:p-6 hover:bg-accent/30 hover:border-foreground/20 transition-all duration-200 hover:shadow-sm">
+                <div className="border  p-4 sm:p-6 hover:bg-accent/30 hover:border-foreground/20 transition-all duration-200 ">
                   {/* Header with title */}
                   <div className="mb-3 sm:mb-4">
                     <h3 className="text-lg sm:text-xl font-semibold text-foreground group-hover:text-muted transition-colors leading-tight">
@@ -103,7 +103,9 @@ export default function BlogPage() {
                   <div className="flex items-center justify-between">
                     {/* Left side - Date and Tags */}
                     <div className="flex items-center gap-3">
-                      <span className="text-xs sm:text-sm text-muted">{post.date}</span>
+                      <span className="text-xs sm:text-sm text-muted">
+                        {post.date}
+                      </span>
                       <span className="text-muted">•</span>
                       <div className="flex flex-wrap gap-1.5">
                         {post.tags.slice(0, 2).map((tag, tagIndex) => (

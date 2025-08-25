@@ -1,6 +1,6 @@
 "use client";
 
-import { Mail, MapPin, Github, Linkedin, ArrowUpRight, ExternalLink } from "lucide-react"
+import { Mail, Github, Linkedin, ExternalLink } from "lucide-react"
 import { Container } from "@/components/container";
 import { motion } from "framer-motion";
 
