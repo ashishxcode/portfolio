@@ -1,0 +1,27 @@
+"use client";
+
+interface LogoProps {
+  className?: string;
+}
+
+export function Logo({ className = "" }: LogoProps) {
+  return (
+    <svg 
+      width="32" 
+      height="32" 
+      viewBox="0 0 500 500" 
+      fill="none" 
+      xmlns="http://www.w3.org/2000/svg"
+      className={`${className}`}
+    >
+      <path 
+        d="M301.896 137.921L263.095 205.193L326.389 314.854C311.694 309.422 294.088 304.087 273.863 300.158C250.34 295.599 229.241 294.144 211.781 294.047L171.38 364.083C194.515 360.494 231.715 357.923 274.93 369.272C345.839 387.848 388.859 432.469 405.35 451.627H483L301.896 137.921Z" 
+        fill="currentColor"
+      />
+      <path 
+        d="M250 48L17 451.627H94.6505C159.384 339.525 224.116 227.406 288.849 115.271L250 48Z" 
+        fill="currentColor"
+      />
+    </svg>
+  );
+}

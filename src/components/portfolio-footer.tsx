@@ -1,68 +1,103 @@
 "use client";
 
-import { Container } from "./container";
+import { Logo } from "./logo";
 import { Github, Linkedin, Twitter } from "lucide-react";
 import { motion } from "framer-motion";
 
 export function PortfolioFooter() {
   return (
-    <motion.footer 
-      className="border-t px-4 sm:px-6 lg:px-8 py-8 sm:py-10 lg:py-12"
+    <motion.footer
+      className="border-t bg-background/80 backdrop-blur-sm px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       viewport={{ once: true }}
     >
-      <Container>
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-6 sm:gap-4">
-          <motion.div 
-            className="text-sm font-mono text-muted order-2 sm:order-1"
+      <div className="max-w-4xl mx-auto">
+        {/* Main footer content */}
+        <div className="flex flex-col lg:flex-row justify-between items-start gap-8 lg:gap-12 mb-12">
+          {/* Brand section */}
+          <motion.div
+            className="flex flex-col gap-4"
             initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+            <div className="flex items-center">
+              <Logo />
+            </div>
+            <p className="text-sm text-muted max-w-sm leading-relaxed">
+              Frontend developer crafting clean, minimal interfaces that solve
+              complex user problems.
+            </p>
+          </motion.div>
+
+          {/* Social links */}
+          <motion.div
+            className="flex flex-col gap-4"
+            initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            ashish.dev
-          </motion.div>
-          <motion.div 
-            className="flex items-center gap-4 sm:gap-6 order-1 sm:order-2"
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
-            viewport={{ once: true }}
-          >
-            <a
-              href="https://twitter.com/ashishxcode"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-1.5 sm:p-2 text-muted hover:text-foreground transition-colors flex items-center gap-1.5 sm:gap-2"
-            >
-              <Twitter className="w-4 h-4" />
-              <span className="text-xs sm:text-sm">X</span>
-            </a>
+            <h3 className="text-sm font-medium text-foreground">Connect</h3>
+            <div className="flex flex-col gap-3">
+              <a
+                href="https://twitter.com/ashishxcode"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 text-muted hover:text-foreground transition-colors group"
+              >
+                <div className="p-2 rounded-full bg-muted/30 group-hover:bg-muted/50 transition-colors">
+                  <Twitter className="w-4 h-4" />
+                </div>
+                <span className="text-sm">Follow on X</span>
+              </a>
 
-            <a
-              href="https://github.com/ashishxcode"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-1.5 sm:p-2 text-muted hover:text-foreground transition-colors flex items-center gap-1.5 sm:gap-2"
-            >
-              <Github className="w-4 h-4" />
-              <span className="text-xs sm:text-sm">GitHub</span>
-            </a>
+              <a
+                href="https://github.com/ashishxcode"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 text-muted hover:text-foreground transition-colors group"
+              >
+                <div className="p-2 rounded-full bg-muted/30 group-hover:bg-muted/50 transition-colors">
+                  <Github className="w-4 h-4" />
+                </div>
+                <span className="text-sm">View GitHub</span>
+              </a>
 
-            <a
-              href="https://linkedin.com/in/ashishxcode"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-1.5 sm:p-2 text-muted hover:text-foreground transition-colors flex items-center gap-1.5 sm:gap-2"
-            >
-              <Linkedin className="w-4 h-4" />
-              <span className="text-xs sm:text-sm">LinkedIn</span>
-            </a>
+              <a
+                href="https://linkedin.com/in/ashishxcode"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 text-muted hover:text-foreground transition-colors group"
+              >
+                <div className="p-2 rounded-full bg-muted/30 group-hover:bg-muted/50 transition-colors">
+                  <Linkedin className="w-4 h-4" />
+                </div>
+                <span className="text-sm">Connect on LinkedIn</span>
+              </a>
+            </div>
           </motion.div>
         </div>
-      </Container>
+
+        {/* Bottom section */}
+        <motion.div
+          className="flex flex-col sm:flex-row items-center justify-between gap-4"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
+          <p className="text-xs text-muted">
+            © {new Date().getFullYear()} Ashish Patel. All rights reserved.
+          </p>
+          <p className="text-xs text-muted">
+            Built with Next.js, Tailwind CSS & TypeScript
+          </p>
+        </motion.div>
+      </div>
     </motion.footer>
   );
 }
