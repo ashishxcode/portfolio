@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import tailwindAnimate from "tailwindcss-animate";
 
 const config: Config = {
   darkMode: "class",
@@ -24,8 +25,6 @@ const config: Config = {
         ring: "rgb(var(--foreground))",
         background: "rgb(var(--background))",
         foreground: "rgb(var(--foreground))",
-        muted: "rgb(var(--muted))",
-        accent: "rgb(var(--accent))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -76,7 +75,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [import("tailwindcss-animate")],
+  plugins: [tailwindAnimate],
 } satisfies Config;
 
 export default config;
